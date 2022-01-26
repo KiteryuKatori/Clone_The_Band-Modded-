@@ -40,7 +40,7 @@
       console.log("Modal ", ticket_modal, " activated.");
    }
 
-   // TRR: 3/1
+   // TRR: 2/1
    // DSTT, GT: 7/1
    // LTCB: 9/1 
    // QP: 19/1
