@@ -96,7 +96,7 @@
 /*SLIDER*/
 .slider {
     position: relative;
-    background: url('/assets/gr0.jpg') top center / cover no-repeat;
+    background: url('./assets/gr0.jpg') top center / cover no-repeat;
     margin-top: calc( var(--navHei) * -1.5);
     padding-top: 50%;
     text-align: center;
