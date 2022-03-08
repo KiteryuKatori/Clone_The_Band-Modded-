@@ -25,7 +25,10 @@
    })
   
    // closeModalBtn.addEventListener("click", closeModal(ticket_modal));
-
+   ticket_modal.addEventListener("click", () => {
+      closeModal(ticket_modal);
+   });
+   
    closeModalBtn.addEventListener("click", () => {
       closeModal(ticket_modal);
    });

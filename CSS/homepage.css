@@ -3,7 +3,7 @@
 :root {
     --navHei: 60px;
     --section-width: 50vw;
-    --gridCollumnWidth: calc((65vw) / 4)
+    --products-width: calc(25% - 8px);
 }
 
 * {
@@ -96,7 +96,7 @@
 /*SLIDER*/
 .slider {
     position: relative;
-    background: url('./assets/gr0.jpg') top center / cover no-repeat;
+    background: url('/assets/gr0.jpg') top center / cover no-repeat;
     margin-top: calc( var(--navHei) * -1.5);
     padding-top: 50%;
     text-align: center;
@@ -158,8 +158,8 @@
     line-height: 1.5rem;
 }
 
-/* TEAM */
-.section.team {
+/* staff */
+.section.staff {
     /* background-color: rgb(85, 104, 85); */
     width: calc( var(--section-width) * 2 );
 }
@@ -173,7 +173,7 @@
     height: 250px;
 }
 
-.section.team img {
+.section.staff img {
     margin-top: 16px;
     object-fit: cover;
     width: 180px;
@@ -181,33 +181,33 @@
 }
 
 /*AN*/
-.section.team .mem.a img {
+.section.staff .mem.a img {
     object-position: 0px -40px;
 }
 
 /*LONG*/
-.section.team .mem.l img {
+.section.staff .mem.l img {
     object-position: 0px -120px;
 }
 
 
-/* TICKETS */
+/* products */
 
-.section.tickets {
+.section.products {
     width: calc( var(--section-width) / 0.55 );
 }
 
-.section.tickets .about{
+.section.products .about{
     text-align: center;
 }
 
-.section.tickets .month-List {
+.section.products .month-List {
     text-align: left;
     margin: 20px auto 36px auto;
     width: 60vw;
 }
 
-.section.tickets .month-List .mon {
+.section.products .month-List .mon {
     height: 50px;
     line-height: 50px;
     margin-top: 2px;
@@ -223,15 +223,15 @@
     transform: scale(1.05);
 }
 
-.section.tickets .month-List .mon :nth-child(n){
+.section.products .month-List .mon :nth-child(n){
     display: inline-block;
 }
 
-.section.tickets .month-List :last-child {
+.section.products .month-List :last-child {
     border-style: none;
 } 
 
-.section.tickets .month-List .mon .sout {
+.section.products .month-List .mon .sout {
     line-height: 28px;
     height: 28px;
     padding: 0px 8px;
@@ -240,13 +240,14 @@
     color: #fff;
 }
 
-.section.tickets .month-List .mon .avail {
-    margin-top: 10px;
+.section.products .month-List .mon .avail {
+    padding: 0px 12px;
+    margin-top: 4px;
     text-align: center;
-    line-height: 28px;
-    height: 28px;
-    width: 28px;
-    border-radius: 14px;
+    line-height: 36px;
+    height: 36px;
+    /* width: 28px; */
+    border-radius: 36px;
     background: rgb(63, 65, 63);
     color: #fff;
     float: right;
@@ -254,37 +255,37 @@
 
 /*TICKET LIST*/
 
-.section.tickets .ticket-List {
+.section.products .ticket-List {
     /* background-color: rgb(250, 192, 204); */
-    width: calc( 65vw + 24px);
+    width: 80vw;
     margin: auto;
     display: grid;
-    grid-template-columns: var(--gridCollumnWidth) var(--gridCollumnWidth) var(--gridCollumnWidth) var(--gridCollumnWidth);
-    grid-template-rows: 400px 400px;
-    gap: 8px 8px;
+    /* grid-template-columns: var(--products-width) var(--products-width) var(--products-width) calc(var(--products-width) + 8px); */
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 8px;
+    row-gap: 12px;
+    transition: 250ms ease-in-out;
 }
 
-.section.tickets .ticket-List .ticket {
+.section.products .ticket-List .ticket {
     background-color: rgb(230, 230, 230);
-    height: 400px;
-    width: 280px;
+    padding: 20px 16px;
+    /* width: 280px; */ 
     border-radius: 12px;
 }
 
-.section.tickets .ticket-List .ticket .img-Container {
+.section.products .ticket-List .ticket .img-Container {
     position: relative;
     border-radius: 12px;
-    width: 240px;
+    width: 100%;
     height: 180px;
-    align-items: center;
-    margin: 16px auto;
     overflow: hidden;
 }
 
-.section.tickets .ticket-List .ticket img {
+.section.products .ticket-List .ticket img {
     position: absolute;
-    width: 240px;
-    height: 180px;
+    width: 100%;
+    height: 100%;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
@@ -294,19 +295,19 @@
     cursor: pointer;
 }
 
-.section.tickets .ticket-List .ticket img:hover {
-    transform: scale(1.2) translateX(-45%) translateY(-45%);;
+.section.products .ticket-List .ticket img:hover {
+    transform: scale(1.2) translateX(-40%) translateY(-40%);
     top: 50%;
     left: 50%;
 }
 
-.section.tickets .ticket-List .ticket :nth-child(n):not(.img-Container):not(button):not(img) {
+.section.products .ticket-List .ticket :nth-child(n):not(.img-Container):not(button):not(img) {
     margin: 0 16px 4px 16px;
     text-align: left;
 }
 
 .ticket p.date {
-    margin: 24px 88px 24px 88px;  
+    margin: 24px 88px;  
     color: rgb(97, 97, 97);
     font-weight: lighter;
     font-size: 16px;
@@ -318,7 +319,7 @@
 }
 
 .ticket-buy-btn {
-    margin-top: 20px;
+    margin-top: 24px;
     font-size: 1em;
     position: relative;
     border: none;
@@ -374,7 +375,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 2;
+    z-index: 2;  
     display: none;
     align-items: center;
     justify-content: center;
@@ -389,6 +390,7 @@
     max-width: 900px;
     height: 500px;
     background-color: rgb(250, 250, 250);
+    animation: modalFadeInTop ease 500ms;
 }
 
 
@@ -518,3 +520,26 @@
 }
 
 /*FINISH MODAL FOOTERS*/
+
+
+
+@media screen and (max-width: 1300px) {
+    .section.products .ticket-List {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .section.products .ticket-List {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@keyframes modalFadeInTop {
+    from {
+        transform: translateY(-20%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
