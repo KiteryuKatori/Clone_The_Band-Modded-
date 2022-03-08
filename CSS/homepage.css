@@ -4,6 +4,7 @@
     --navHei: 60px;
     --section-width: 50vw;
     --products-width: calc(25% - 8px);
+    --common-transition: 250ms ease-in-out;
 }
 
 * {
@@ -186,8 +187,8 @@
 }
 
 /*LONG*/
-.section.staff .mem.l img {
-    object-position: 0px -120px;
+.section.staff .mem.b img {
+    object-position: 0px -56px;
 }
 
 
@@ -216,7 +217,7 @@
     border: 2px solid #000;
     border-style: none none solid none;
     cursor: pointer;
-    transition: 200ms ease-in;
+    transition: var(--common-transition);
 }
 
 .month-List .mon:hover {
@@ -253,28 +254,33 @@
     float: right;
 }
 
-/*TICKET LIST*/
+/*product LIST*/
 
-.section.products .ticket-List {
-    /* background-color: rgb(250, 192, 204); */
+.section.products .product-List {
     width: 80vw;
     margin: auto;
     display: grid;
-    /* grid-template-columns: var(--products-width) var(--products-width) var(--products-width) calc(var(--products-width) + 8px); */
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 8px;
-    row-gap: 12px;
-    transition: 250ms ease-in-out;
+    gap: 12px;
+    transition: var(--common-transition);
 }
 
-.section.products .ticket-List .ticket {
+.section.products .product-List .product {
     background-color: rgb(230, 230, 230);
     padding: 20px 16px;
-    /* width: 280px; */ 
     border-radius: 12px;
+    transition: var(--common-transition);
+    cursor: pointer;
 }
 
-.section.products .ticket-List .ticket .img-Container {
+.section.products .product-List .product:hover {
+    background-color: rgb(253, 253, 253);
+    box-shadow: 4px 0px 20px rgba(0, 0, 0, 0.4);
+    transition: var(--common-transition);
+    cursor: pointer;
+}
+
+.section.products .product-List .product .img-Container {
     position: relative;
     border-radius: 12px;
     width: 100%;
@@ -282,7 +288,7 @@
     overflow: hidden;
 }
 
-.section.products .ticket-List .ticket img {
+.section.products .product-List .product img {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -291,22 +297,22 @@
     transform: translateX(-50%) translateY(-50%);
     object-fit: cover;
     border-radius: 8px;
-    transition: 200ms ease;
+    transition: var(--common-transition);
     cursor: pointer;
 }
 
-.section.products .ticket-List .ticket img:hover {
+.section.products .product-List .product img:hover {
     transform: scale(1.2) translateX(-40%) translateY(-40%);
     top: 50%;
     left: 50%;
 }
 
-.section.products .ticket-List .ticket :nth-child(n):not(.img-Container):not(button):not(img) {
+.section.products .product-List .product :nth-child(n):not(.img-Container):not(button):not(img) {
     margin: 0 16px 4px 16px;
     text-align: left;
 }
 
-.ticket p.date {
+.product p.date {
     margin: 24px 88px;  
     color: rgb(97, 97, 97);
     font-weight: lighter;
@@ -314,11 +320,11 @@
     font-style: italic;
 }
 
-.ticket p.dsc {
+.product p.dsc {
     font-size: 14px;
 }
 
-.ticket-buy-btn {
+.product-buy-btn {
     margin-top: 24px;
     font-size: 1em;
     position: relative;
@@ -334,7 +340,7 @@
     z-index: 2;
 }
 
-.ticket-buy-btn::after {
+.product-buy-btn::after {
     content: "";
     position: absolute;
     background-color: rgb(245, 245, 245);
@@ -348,18 +354,18 @@
     transition: ease 0.75s;
 }
 
-.ticket-buy-btn:hover {
+.product-buy-btn:hover {
     color: #000;
     z-index: 2;
 }
 
-.ticket-buy-btn:hover:after {
+.product-buy-btn:hover:after {
     width: 150px;
     height: 150px;
     z-index: -1;
 }
 
-.ticket-buy-btn:active:after {
+.product-buy-btn:active:after {
     background-color: rgb(146, 146, 146);
     transition: 1ms;
 }
@@ -367,7 +373,7 @@
 
 /* MODAL */
 
-.ticket-modal {
+.product-modal {
     position: relative;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.2);
@@ -381,7 +387,7 @@
     justify-content: center;
 }
 
-.ticket-modal.active {
+.product-modal.active {
     display: flex;
 }
 
@@ -418,7 +424,7 @@
     right: 0;
     padding: 16px;
     cursor: pointer;
-    transition: 200ms ease;
+    transition: var(--common-transition);
 }
 
 .modal-Container-Header .ti-close:hover{
@@ -523,15 +529,23 @@
 
 
 
-@media screen and (max-width: 1300px) {
-    .section.products .ticket-List {
+@media screen and (max-width: 1460px) {
+    .section.products .product-List {
         grid-template-columns: repeat(3, 1fr);
+        column-gap: 20px;
+        row-gap: 20px;
     }
 }
 
 @media screen and (max-width: 960px) {
-    .section.products .ticket-List {
+    .section.products .product-List {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .section.products .product-List {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -543,3 +557,4 @@
         transform: translateY(0);
     }
 }
+
