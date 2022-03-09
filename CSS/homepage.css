@@ -77,6 +77,10 @@
     color: #fff;
 }
 
+.dropdown-toggleM {
+    display: none;
+}
+
 .search-li { /* #search Icon */
     padding-top: 5px;
     position: absolute;
@@ -780,7 +784,21 @@
     }
 
     .navBar .navBtn {
+        
+    }
+    
+    .toggle {
+        display: inline-block;
+    }
 
+    .dropdown-toggleM {
+        display: block;
+        font-size: 36px;
+        cursor: pointer;
+    }
+
+    .search-li {
+        display: none;
     }
 
     .section.products .product-List {
