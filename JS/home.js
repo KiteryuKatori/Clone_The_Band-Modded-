@@ -10,7 +10,9 @@
       })
    })
   
-   closeModalBtn.addEventListener("click", closeModal(product_modal_overlay));
+  closeModalBtn.addEventListener("click", () => {
+     closeModal(product_modal_overlay);
+  })
    product_modal_overlay.addEventListener("click", () => {
       closeModal(product_modal_overlay);
    });

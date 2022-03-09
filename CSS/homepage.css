@@ -97,8 +97,8 @@
 /*SLIDER*/
 .slider {
     position: relative;
-    background: url('/assets/gr0.jpg') top center / cover no-repeat;
-    margin-top: calc( var(--navHei) * -1.5);
+    background: url('/assets/gr2.jpg') top center / cover no-repeat;
+    margin-top: -200px;
     padding-top: 50%;
     text-align: center;
     color: #fff;
@@ -139,55 +139,91 @@
     width: var(--section-width);
     margin: auto;
     text-align: center;
-    padding-bottom: 100px
 }
 
 .section-heading {
-    padding:36px 0 20px 0;
+    padding: 8px;
     letter-spacing: 0.25rem;
     text-transform: uppercase;
     font-weight: bold;
+    font-size: 36px;
 }
 
 .section-sub-heading {
     font-weight: 600;
     padding-bottom: 16px;
+    font-size: 24px;
 }
 
 .about {
+    margin: 8px 0px;
+    padding: 4px;
     text-align: justify;
     line-height: 1.5rem;
+    font-size: 1.25rem;
+}
+
+/* introSection */
+.intro {
+    background-color: rgb(39, 39, 39);
+    color: #fff;
+    width: 100%;
+    padding: 36px 0px;
+}
+
+#intro {
+    width: 480px;
+    margin: auto;
 }
 
 /* staff */
-.section.staff {
-    /* background-color: rgb(85, 104, 85); */
+.section.staffs {
     width: calc( var(--section-width) * 2 );
+    margin: 100px 0px;
 }
 
-
-.mem {
-    /* padding: 0 24px 0 24px; */
-    margin: 4px;
-    /* background-color: rgb(138, 173, 189); */
-    display: inline-block;
-    height: 250px;
+.staff-list {
+    /* background-color: rgb(85, 104, 85); */
+    margin: auto;
+    display: grid;
+    width: 80%;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 20px;
 }
 
-.section.staff img {
-    margin-top: 16px;
+.staff {
+    background-color: rgb(230, 230, 230);
+    padding: 20px;
+    width: 200px;
+    margin: auto;
+    transition: var(--common-transition);
+}
+
+.staff:hover {
+    background-color: rgb(241, 241, 241);
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.507);
+    transform: scale(1.4);
+}
+
+.section.staffs h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.section.staffs img {
+    margin-top: 8px;
     object-fit: cover;
-    width: 180px;
-    height: 200px;
+    width: 160px;
+    height: 180px;
 }
 
 /*AN*/
-.section.staff .mem.a img {
+.section.staffs .staff.a img {
     object-position: 0px -40px;
 }
 
 /*LONG*/
-.section.staff .mem.b img {
+.section.staffs .staff.b img {
     object-position: 0px -56px;
 }
 
@@ -196,6 +232,8 @@
 
 .section.products {
     width: calc( var(--section-width) / 0.55 );
+    background-color: rgb(39, 39, 39);
+
 }
 
 .section.products .about{
@@ -367,6 +405,94 @@
 
 .product-buy-btn:active:after {
     background-color: rgb(146, 146, 146);
+    transition: 1ms;
+}
+
+/* CONTACT */
+.contact {
+    /* background-color: whitesmoke; */
+    width: 80%;
+    padding: 36px;
+    font-size: 1.25rem;
+    
+}
+
+.contactForm {
+    display: flex;
+    width: 100%;
+    padding: 36px 0;
+}
+
+.contactForm .info,
+.contactForm .userMessage {
+    margin-top: 36px;
+    padding: 24px;
+    /* background-color: violet; */
+    text-align: left;
+    flex: 1;
+}
+
+.contactForm .info p,
+.contactForm .info a {
+    color: rgb(0, 5, 60);
+    padding: 8px 4px;
+}
+
+/* .contactForm .info {
+    flex: 2;
+}
+
+.contactForm .userMessage {
+    flex: 3;
+} */
+
+.userMessage {
+    display: inline-block;
+}
+
+.userMessage input {
+    height: 48px;
+    padding: 12px;
+    margin: 4px 0;
+    font-size: 1.25rem;
+}
+
+.userMessage .user {
+    display: flex;
+    flex-direction: row;
+    column-gap: 8px;
+}
+
+.userMessage .user input {
+    flex: 1;
+}
+
+.message {
+    display: block;
+    width: 100%;
+}
+
+.userMessage .send {
+    font-size: 1.25rem;
+    float: right;
+    /* height: 60px; */
+    padding: 12px 32px;
+    background-color: rgb(0, 0, 12);
+    color: #fff;
+    cursor: pointer;
+    transition: var(--common-transition);
+    border: 2px solid #fff;
+}
+
+.userMessage .send:hover {
+    background-color: rgb(255, 255, 255);
+    color: #000;
+    border: 2px solid #000;
+}
+
+.userMessage .send:active {
+    background-color: rgb(70, 69, 69);
+    color: rgb(0, 0, 0);
     transition: 1ms;
 }
 
