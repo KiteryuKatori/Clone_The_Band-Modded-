@@ -165,8 +165,8 @@
 
 /* introSection */
 .intro {
-    background-color: rgb(39, 39, 39);
-    color: #fff;
+    /* background-color: rgb(39, 39, 39); */
+    color: rgb(39, 39, 39);
     width: 100%;
     padding: 36px 0px;
 }
@@ -179,7 +179,7 @@
 /* staff */
 .section.staffs {
     width: calc( var(--inner-section-width) * 2 );
-    margin: 100px 0px;
+    margin: 36px 0px;
 }
 
 .staff-list {
@@ -424,14 +424,14 @@
 .contactForm {
     display: flex;
     width: 100%;
-    padding: 36px 0;
+    /* padding: 36px 0;
+    background-color: violet; */
 }
 
 .contactForm .info,
 .contactForm .userMessage {
     margin-top: 36px;
     padding: 24px;
-    /* background-color: violet; */
     text-align: left;
     flex: 1;
 }
@@ -479,7 +479,6 @@
 .userMessage .send {
     font-size: 1.25rem;
     float: right;
-    /* height: 60px; */
     padding: 12px 32px;
     background-color: rgb(0, 0, 12);
     color: #fff;
@@ -500,6 +499,50 @@
     transition: 1ms;
 }
 
+
+/* FOOTER */
+.footer {
+    background-color: rgb(20, 20, 20);
+    /* height: 200px; */
+    color:rgb(247, 247, 247);
+    
+}
+
+.footer a{
+    color:rgb(247, 247, 247);
+    transition: 200ms ease-in-out;
+}
+
+#footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#footer-container .info {
+    /* background-color: rgb(122, 255, 133); */
+    height: 180px;
+    font-size: 20px;
+    padding: 16px 36px;
+    line-height: 36px;
+}
+
+#footer-container .nav-links {
+    padding: 16px;
+    /* background-color: rgb(111, 159, 214); */
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+#footer-container a:hover{
+    color: rgb(99, 160, 230);
+    padding: 0 16px;
+}
+
+.footer > p {
+    text-align: center;
+}
 
 /* MODAL */
 
@@ -687,6 +730,11 @@
         width: 140px;
         height: 160px;
     }
+
+    .userMessage .user {
+        flex-direction: column;
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 960px) {
@@ -706,9 +754,35 @@
         width: 150px;
         height: 200px;
     }
+    
+    .contactForm {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .contactForm .userMessage {
+        flex-direction: column;
+        margin-top: 0px;
+    }
+
+
+    .contactForm .info {
+        flex-direction: column;
+    }
+
 }
 
 @media screen and (max-width: 720px) {
+    .navBar {
+        display: flex;
+        flex-direction: column;
+        margin-top: var(--navHei);
+    }
+
+    .navBar .navBtn {
+
+    }
+
     .section.products .product-List {
         grid-template-columns: 1fr;
     }
