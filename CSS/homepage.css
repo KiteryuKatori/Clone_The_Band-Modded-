@@ -2,7 +2,7 @@
 
 :root {
     --navHei: 60px;
-    --section-width: 50vw;
+    --inner-section-width: 50vw;
     --products-width: calc(25% - 8px);
     --common-transition: 250ms ease-in-out;
 }
@@ -136,7 +136,7 @@
 
 /* MAINS */
 .section {
-    width: var(--section-width);
+    width: 100%;
     margin: auto;
     text-align: center;
 }
@@ -178,7 +178,7 @@
 
 /* staff */
 .section.staffs {
-    width: calc( var(--section-width) * 2 );
+    width: calc( var(--inner-section-width) * 2 );
     margin: 100px 0px;
 }
 
@@ -187,7 +187,7 @@
     margin: auto;
     display: grid;
     width: 80%;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     row-gap: 20px;
 }
 
@@ -231,13 +231,17 @@
 /* products */
 
 .section.products {
-    width: calc( var(--section-width) / 0.55 );
+    padding: 60px 0px;
     background-color: rgb(39, 39, 39);
-
 }
 
-.section.products .about{
+.section.products .section-heading,
+.section.products .section-sub-heading,
+.section.products .about {
     text-align: center;
+    color: #fff;
+    width: 80%;
+    margin: auto;
 }
 
 .section.products .month-List {
@@ -312,7 +316,7 @@
 }
 
 .section.products .product-List .product:hover {
-    background-color: rgb(253, 253, 253);
+    background-color: rgb(245, 245, 245);
     box-shadow: 4px 0px 20px rgba(0, 0, 0, 0.4);
     transition: var(--common-transition);
     cursor: pointer;
@@ -632,8 +636,8 @@
 .modal-Container-Footer button:hover:after {
     width: 100%;
     background-color: rgb(138, 255, 115);
-    height: calc(var(--section-width) * 2);
-    border-radius: calc(var(--section-width) * 2);
+    height: calc(var(--inner-section-width) * 2);
+    border-radius: calc(var(--inner-section-width) * 2);
     border-radius: 0;
 }
 
@@ -653,7 +657,12 @@
 
 /*FINISH MODAL FOOTERS*/
 
-
+@media screen and (max-width: 1500px) {
+    .staff-list {
+        grid-template-columns: repeat(5, 1fr);
+        row-gap: 32px;
+    }
+}
 
 @media screen and (max-width: 1460px) {
     .section.products .product-List {
@@ -663,15 +672,58 @@
     }
 }
 
+@media screen and (max-width: 1280px) {
+    .staff-list {
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 24px;
+    }
+    
+    .staff {
+        width: 18vw;
+        padding: 20px 12px;
+    }
+
+    .section.staffs img {
+        width: 140px;
+        height: 160px;
+    }
+}
+
 @media screen and (max-width: 960px) {
     .section.products .product-List {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .staff-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .staff {
+        width: 22vw;
+    }
+
+    .section.staffs img {
+        width: 150px;
+        height: 200px;
     }
 }
 
 @media screen and (max-width: 720px) {
     .section.products .product-List {
         grid-template-columns: 1fr;
+    }
+
+    .staff-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .staff {
+        width: 300px;
+    }
+
+    .section.staffs img {
+        width: 200px;
+        height: 280px;
     }
 }
 
