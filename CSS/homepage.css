@@ -7,6 +7,11 @@
     --common-transition: 250ms ease-in-out;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -99,7 +104,7 @@
 }
 
 /*SLIDER*/
-.slider {
+#slider {
     position: relative;
     background: url('/assets/gr2.jpg') top center / cover no-repeat;
     margin-top: -200px;
@@ -109,13 +114,13 @@
     font-size: 1.25rem;
 }
 
-.slider .txt-container {
+#slider .txt-container {
     height: 125px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.75);
 }
 
-.slider .txt-title {
+#slider .txt-title {
     position: absolute;
     font-size: 1.5em;
     padding-top: 20px;
@@ -123,7 +128,7 @@
     width: 100%;
 }
 
-.slider .txt-description {
+#slider .txt-description {
     position: absolute;
     padding-bottom: 30px;
     padding-top: 20px;
@@ -143,6 +148,7 @@
     width: 100%;
     margin: auto;
     text-align: center;
+    padding: 60px 0px;
 }
 
 .section-heading {
@@ -183,7 +189,6 @@
 /* staff */
 .section.staffs {
     width: calc( var(--inner-section-width) * 2 );
-    margin: 36px 0px;
 }
 
 .staff-list {
@@ -221,21 +226,15 @@
     height: 180px;
 }
 
-/*AN*/
+/*ANdy*/
 .section.staffs .staff.a img {
     object-position: 0px -40px;
-}
-
-/*LONG*/
-.section.staffs .staff.b img {
-    object-position: 0px -56px;
 }
 
 
 /* products */
 
 .section.products {
-    padding: 60px 0px;
     background-color: rgb(39, 39, 39);
 }
 
@@ -420,7 +419,7 @@
 .contact {
     /* background-color: whitesmoke; */
     width: 80%;
-    padding: 36px;
+    padding: 60px 36px;
     font-size: 1.25rem;
     
 }
@@ -527,7 +526,7 @@
     /* background-color: rgb(122, 255, 133); */
     height: 180px;
     font-size: 20px;
-    padding: 16px 36px;
+    padding: 36px 36px 0 36px;
     line-height: 36px;
 }
 
@@ -537,6 +536,11 @@
     display: flex;
     flex-direction: column;
     font-size: 20px;
+}
+
+#footer-container .nav-links a {
+    text-align: center;
+    /* background-color: aqua; */
 }
 
 #footer-container a:hover{
@@ -787,35 +791,63 @@
         
     }
     
-    .toggle {
-        display: inline-block;
+    .header .navBar .toggle {
+        display: block;
+        position: absolute;
+        right: 8px;
+        top: 8px;
     }
 
     .dropdown-toggleM {
         display: block;
         font-size: 36px;
-        cursor: pointer;
+        color: rgb(255, 255, 255);
+        transform: rotate(90deg);
     }
 
     .search-li {
         display: none;
     }
 
-    .section.products .product-List {
-        grid-template-columns: 1fr;
+
+
+    #intro {
+        width: 360px;
     }
 
+    
     .staff-list {
         grid-template-columns: repeat(1, 1fr);
     }
     
+    .section.staffs {
+        padding: 60px 36px;
+    }
+
     .staff {
         width: 300px;
     }
-
+    
     .section.staffs img {
         width: 200px;
         height: 280px;
+    }
+    
+    .section.products .product-List {
+        grid-template-columns: 1fr;
+    }
+
+    #footer-container {
+        flex-direction: column;
+    }
+
+    #footer-container .nav-links h3 {
+        /* padding-left: 60px; */
+        text-align: center;
+    }
+
+    .contact {
+        padding: 60px 4px;
     }
 }
 
