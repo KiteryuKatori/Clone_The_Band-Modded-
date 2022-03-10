@@ -1,7 +1,26 @@
-  const buyBtns = document.querySelectorAll(".product-buy-btn");
-   const closeModalBtn = document.querySelector(".ti-close");
-   const product_modal_overlay = document.querySelector(".product-modal");
-   const product_modal_buy = document.querySelector(".modal-Container");
+const buyBtns = document.querySelectorAll(".product-buy-btn");
+const closeModalBtn = document.querySelector(".ti-close");
+const product_modal_overlay = document.querySelector(".product-modal");
+const product_modal_buy = document.querySelector(".modal-Container");
+const toggleMenuDropdown = document.querySelector(".toggle");
+const navBar = document.querySelector(".navBar");
+const navBtn = document.querySelectorAll(".navBtn");
+
+   toggleMenuDropdown.onclick = function() {
+      toggleMenuDropdown.classList.toggle('active');
+      navBar.classList.toggle('active');
+      console.log("toggle= ", toggleMenuDropdown.classList);
+      console.log("navBar= ", navBar.classList);
+   }
+
+   navBtn.forEach(btn => {
+      btn.onclick = function() {
+         toggleMenuDropdown.classList.toggle('active');
+         navBar.classList.toggle('active');
+         console.log("toggle= ", toggleMenuDropdown.classList);
+         console.log("navBar= ", navBar.classList);
+      }
+   })
 
    buyBtns.forEach(btn => {
       btn.addEventListener("click", () => {
