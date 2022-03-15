@@ -44,18 +44,10 @@ product_modal_buy.addEventListener("click", function (event) {
 //    closeModal(product_modal_overlay);
 // });
 
-<<<<<<< HEAD
-   // TRR: 2/1
-   // DSTT, GT: 7/1
-   // LTCB: 9/1 
-   // QP: 19/1
-   // Eng: 21/1
-=======
 function closeModal(modal) {
    modal.classList.remove("active");
    console.log("Deactivate ", modal, " modal sucessfully.");
 }
->>>>>>> f990a8070e1e92349cc95cc9b33262f1f3c96853
 
 function openModal(modal) {
    modal.classList.add("active");
